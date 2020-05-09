@@ -375,6 +375,14 @@
             }
         },
         {
+            "Key": "ee03dda5-62dc-492d-8e6f-caeb28d37899",
+            "Value": {
+                "id": "e826ffec-b537-47a6-a681-9ba0950ed43a",
+                "resourcePath": "scripts\\applyForce\\applyForce.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f12bdd80-d792-4715-a11d-b433a864acc5",
             "Value": {
                 "id": "a27cd50a-c054-4e0b-b62b-0ab0453136be",
@@ -403,7 +411,8 @@
         "06a3b5d7-3e6f-49be-9c3e-e2451808fa47",
         "6abaade6-c677-4794-8da3-cb00f76a1c08",
         "a8d76ebc-7b18-4920-9eb1-3312828bcb51",
-        "87e03ee9-363b-4736-9a47-ae0481a6dae2"
+        "87e03ee9-363b-4736-9a47-ae0481a6dae2",
+        "ee03dda5-62dc-492d-8e6f-caeb28d37899"
     ],
     "tutorial": ""
 }

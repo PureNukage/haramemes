@@ -28,4 +28,4 @@ punch = max(qPress, gamepadKey2Pressed)
 punchHold = max(qPressed, gamepadKey2Press)
 
 
-gamepad_set_axis_deadzone(0, 0.1)
+gamepad_set_axis_deadzone(0, 0.05)

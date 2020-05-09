@@ -3,6 +3,9 @@ switch(states)
 	#region Free
 		case states.free:
 		
+			//	Player movement
+			//var Direction = point_direction(0,0,input.hspd,input.vspd)
+				
 			playerMovement()
 			
 			//	I am jumping
@@ -13,7 +16,11 @@ switch(states)
 			
 			//	I am punching
 			if input.punch {
-				states = states.punch1	
+				states = states.punch1
+				if input.hspd != 0 or input.vspd != 0 {
+					Direction = point_direction(0,0,hspd,vspd)
+					force = 12
+				}
 				movespeed = 0
 				xx = 0
 				yy = 0
@@ -25,8 +32,6 @@ switch(states)
 			z = y
 			groundX = x
 			groundY = y
-			
-			collisionCheck()
 			
 		break
 	#endregion
@@ -42,8 +47,6 @@ switch(states)
 			
 			//	Applying gravity to accelerant
 			zAccl -= grav
-			
-			collisionCheck()
 			
 			//	Keep my shadow following my x-position
 			groundX = x
@@ -104,6 +107,8 @@ switch(states)
 				punchCharge = 1
 			}
 			
+			force = applyForce(Direction,force)
+			
 			//	My punch is over
 			if animation_end { 
 				
@@ -114,6 +119,10 @@ switch(states)
 				} 
 				//	I am punching again!
 				else {
+					if input.hspd != 0 or input.vspd != 0 {
+						Direction = point_direction(0,0,input.hspd,input.vspd)
+						force = 20
+					}
 					states = states.punch2
 					image_index = 0
 				}
@@ -128,7 +137,7 @@ switch(states)
 			image_speed = 1
 			
 			//	I am starting to charge my punch
-			if input.punchHold and punchCharge == 0 and image_index < 2 {
+			if input.punch and punchCharge == 0 and image_index < 2 {
 				punchCharge = 1	
 				image_speed = 0
 				image_index = 1
@@ -141,7 +150,7 @@ switch(states)
 				image_speed = 0
 				
 				//	I am done charging my punch
-				if !input.punchHold or punchChargeRadius >= punchChargeRadiusMax-3 {
+				if !input.punchHold or punchChargeRadius >= punchChargeRadiusMax-5 {
 					punchCharge = 0	
 					punchChargePunch = true
 					image_speed = 1
@@ -151,10 +160,7 @@ switch(states)
 			
 			//	I am charge punching
 			if punchChargePunch {
-				movespeed = 8
-				movespeedMax = 8
-				//playerMovement()
-				//collisionCheck()
+				force = applyForce(Direction,force)
 			}
 			
 			//	I am on the ground
@@ -174,5 +180,7 @@ switch(states)
 		break
 	#endregion
 }
+
+collisionCheck()
 
 depth = -y

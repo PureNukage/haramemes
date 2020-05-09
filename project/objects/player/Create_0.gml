@@ -13,6 +13,9 @@ punchChargePunch = false
 punchChargeRadius = 16
 punchChargeRadiusMax = 32
 
+force = 0
+
+fric = 1
 grav = 1
 
 goSmash = false
