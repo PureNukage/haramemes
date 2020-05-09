@@ -5,11 +5,13 @@ switch(states)
 		
 			playerMovement()
 			
+			//	I am jumping
 			if input.jump {
 				zAccl = 10
 				states = states.jump	
 			}
 			
+			//	I am punching
 			if input.punch {
 				states = states.punch1	
 				movespeed = 0
@@ -18,8 +20,9 @@ switch(states)
 				image_index = 0
 			}
 			
+			//	I am on the ground
+			onGround = true
 			z = y
-			
 			groundX = x
 			groundY = y
 			
@@ -34,15 +37,21 @@ switch(states)
 		
 			sprite_index = s_gorilla_jump
 			
+			//	I am going up or down during this jump
 			z -= zAccl
 			
+			//	Applying gravity to accelerant
 			zAccl -= grav
 			
 			collisionCheck()
+			
+			//	Keep my shadow following my x-position
 			groundX = x
 			
+			//	I am visually in the air!
 			y = z
 			
+			//	I am jump smashing
 			if input.punch and !goSmash and zAccl > 0 and !instance_exists(decal) {
 				goSmash = true
 				grav = 1
@@ -51,15 +60,21 @@ switch(states)
 				
 			}
 			
+			//	I am in the air!
 			if y < groundY {
 				onGround = false
-			} else {
+			} 
+			//	I have landed
+			else {
 				onGround = true
 				states = states.free
+				
+				//	Make smash decal
 				if goSmash {
 					var Decal = instance_create_layer(x,y,"Instances",decal)
 					Decal.timer = 120
 				}
+				
 				goSmash = false
 				grav = 1
 				movespeedMax = 5
@@ -78,22 +93,27 @@ switch(states)
 			sprite_index = s_gorilla_punch1
 			image_speed = 1
 			
-			movespeedMax = 3
-			playerMovement()
-			collisionCheck()
-			
+			//	I am on the ground
 			groundX = x
 			groundY = y
+			onGround = true
+			z = y
 			
-			if image_index < sprite_get_number(sprite_index)-2 and input.punch {
+			//	I am queuing up a second punch
+			if input.punch and image_index < sprite_get_number(sprite_index)-2 {
 				punchCharge = 1
 			}
 			
+			//	My punch is over
 			if animation_end { 
+				
+				//	I am not punching again
 				if !punchCharge {
 					states = states.free	
 					movespeedMax = 5
-				} else {
+				} 
+				//	I am punching again!
+				else {
 					states = states.punch2
 					image_index = 0
 				}
@@ -107,34 +127,44 @@ switch(states)
 			sprite_index = s_gorilla_punch2
 			image_speed = 1
 			
-			if input.punch and image_index < 2 {
+			//	I am starting to charge my punch
+			if input.punchHold and punchCharge == 0 and image_index < 2 {
 				punchCharge = 1	
 				image_speed = 0
 				image_index = 1
 			}
 			
+			//	I am charging my punch
 			if punchCharge > 0 {
+				punchCharge++
 				image_index = 1
 				image_speed = 0
 				
-				if !input.punchHold {
+				//	I am done charging my punch
+				if !input.punchHold or punchChargeRadius >= punchChargeRadiusMax-3 {
 					punchCharge = 0	
 					punchChargePunch = true
 					image_speed = 1
+					image_index = 2
 				}
 			}
 			
+			//	I am charge punching
 			if punchChargePunch {
 				movespeed = 8
 				movespeedMax = 8
-				playerMovement()
-				collisionCheck()
+				//playerMovement()
+				//collisionCheck()
 			}
 			
+			//	I am on the ground
 			groundX = x
 			groundY = y
+			onGround = true
+			z = y
 			
 			if animation_end {
+				punchChargeRadius = 16
 				punchCharge = 0
 				punchChargePunch = false
 				movespeedMax = 5
