@@ -24,5 +24,5 @@ vspd = (keyDown - keyUp) + gamepadAxisLV
 
 jump = max(spacePressed, gamepadKey1Pressed)
 
-punch = max(qPress, gamepadKey2Pressed)
-punchHold = max(qPressed, gamepadKey2Press)
+punch = max(qPressed, gamepadKey2Pressed)
+punchHold = max(qPress, gamepadKey2Press)

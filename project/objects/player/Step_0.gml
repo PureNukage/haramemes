@@ -43,7 +43,7 @@ switch(states)
 			
 			y = z
 			
-			if input.punch and !goSmash {
+			if input.punch and !goSmash and zAccl > 0 and !instance_exists(decal) {
 				goSmash = true
 				grav = 1
 				zAccl += 5
@@ -85,15 +85,18 @@ switch(states)
 			groundX = x
 			groundY = y
 			
-			if image_index > sprite_get_number(sprite_index)-3 and input.punch {
-				states = states.punch2
-				image_index = 0
-				movespeedMax = 5
+			if image_index < sprite_get_number(sprite_index)-2 and input.punch {
+				punchCharge = 1
 			}
 			
 			if animation_end { 
-				states = states.free	
-				movespeedMax = 5
+				if !punchCharge {
+					states = states.free	
+					movespeedMax = 5
+				} else {
+					states = states.punch2
+					image_index = 0
+				}
 			}
 			
 		break	
@@ -104,7 +107,7 @@ switch(states)
 			sprite_index = s_gorilla_punch2
 			image_speed = 1
 			
-			if input.punchHold and image_index < 2 {
+			if input.punch and image_index < 2 {
 				punchCharge = 1	
 				image_speed = 0
 				image_index = 1

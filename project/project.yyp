@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "4ca8a79c-942e-4ed5-a2b9-e807af1da0fd",
+            "Value": {
+                "id": "1523febe-8c51-4a88-a459-f60a29e4f98b",
+                "resourcePath": "objects\\enemy\\enemy.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "50637edb-8c49-4c37-a695-c3533fced9a4",
             "Value": {
                 "id": "0461ef0b-c533-4e44-82d9-5649393adc44",
@@ -124,6 +132,14 @@
                 "id": "226afa4c-40a1-4970-9a56-44132467183b",
                 "resourcePath": "views\\5120eefa-7eab-473c-9265-8dbbb6162e64.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5f5855ff-8da4-472e-8213-2393ef249687",
+            "Value": {
+                "id": "75d3cace-8d2d-443a-8f9d-adafa1fd0725",
+                "resourcePath": "sprites\\s_demon\\s_demon.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -148,6 +164,14 @@
                 "id": "e0001162-3c67-472d-be99-91db4c8d49d1",
                 "resourcePath": "objects\\player\\player.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6fc7675c-baee-4fde-aaea-cc53dc877429",
+            "Value": {
+                "id": "fc5a92b8-b56d-43c6-baf6-791075560161",
+                "resourcePath": "sprites\\s_demon2\\s_demon2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
