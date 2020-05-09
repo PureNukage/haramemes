@@ -79,6 +79,8 @@ switch(states)
 					var Decal = instance_create_layer(x,y,"Instances",decal)
 					Decal.timer = 120
 					smash = true
+					var amount = collision_circle_list(x,y,smashRadius,enemy,false,true,smashList,true)
+					debug_log("I smashed "+string(amount)+" enemies!")
 				}
 				goSmash = false
 				grav = 1
@@ -110,6 +112,18 @@ switch(states)
 			}
 			
 			force = applyForce(Direction,force)
+			
+			mask_index = s_gorilla_punch1
+			if place_meeting(x + xx, y + yy, enemy) {
+				var Enemy = instance_place(x + xx, y + yy, enemy)
+				with Enemy {
+					damaged = true
+					force = other.force + 4
+					Direction = point_direction(other.x,other.y,x,y)	
+				}
+				
+			}
+			mask_index = s_gorilla_idle
 			
 			//	My punch is over
 			if animation_end { 
@@ -165,6 +179,18 @@ switch(states)
 				force = applyForce(Direction,force)
 			}
 			
+			mask_index = s_gorilla_punch1
+			if place_meeting(x + xx, y + yy, enemy) {
+				var Enemy = instance_place(x + xx, y + yy, enemy)
+				with Enemy {
+					damaged = true
+					force = other.force + 4
+					Direction = point_direction(other.x,other.y,x,y)	
+				}
+				
+			}
+			mask_index = s_gorilla_idle
+			
 			//	I am on the ground
 			groundX = x
 			groundY = y
@@ -182,6 +208,8 @@ switch(states)
 		break
 	#endregion
 }
+
+smashCheck()
 
 collisionCheck()
 

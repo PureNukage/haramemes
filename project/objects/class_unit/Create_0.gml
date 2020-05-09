@@ -1,0 +1,19 @@
+////	Active Variables
+movespeed = 0
+movespeedMax = 5
+accl = 0
+force = 0
+xx = 0
+yy = 0
+fric = 1
+grav = 1
+states = states.free
+z = y
+zAccl = 0
+groundX = x
+groundY = y
+onGround = true
+Direction = 0
+
+////	Set Variables
+input = -1
