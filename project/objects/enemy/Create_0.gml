@@ -10,6 +10,7 @@ rotation = 0
 timer = 0
 
 damaged = false
+damagedTimer = -1
 knockedDown = false
 
 damaged = false

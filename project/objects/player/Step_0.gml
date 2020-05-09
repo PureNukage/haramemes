@@ -118,6 +118,7 @@ switch(states)
 				var Enemy = instance_place(x + xx, y + yy, enemy)
 				with Enemy {
 					damaged = true
+					damagedTimer = 15
 					force = other.force + 4
 					Direction = point_direction(other.x,other.y,x,y)	
 				}
@@ -184,7 +185,8 @@ switch(states)
 				var Enemy = instance_place(x + xx, y + yy, enemy)
 				with Enemy {
 					damaged = true
-					force = other.force + 4
+					damagedTimer = 15
+					force = other.force + other.force/2
 					Direction = point_direction(other.x,other.y,x,y)	
 				}
 				

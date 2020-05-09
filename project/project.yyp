@@ -415,6 +415,14 @@
             }
         },
         {
+            "Key": "f0e10121-ca20-4375-ac37-246332424768",
+            "Value": {
+                "id": "2aabb342-45df-40b9-a8cd-6258a8ba8e8c",
+                "resourcePath": "shaders\\sdr_flash\\sdr_flash.yy",
+                "resourceType": "GMShader"
+            }
+        },
+        {
             "Key": "f12bdd80-d792-4715-a11d-b433a864acc5",
             "Value": {
                 "id": "a27cd50a-c054-4e0b-b62b-0ab0453136be",

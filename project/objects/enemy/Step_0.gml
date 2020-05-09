@@ -51,12 +51,17 @@ if knockedDown {
 	}	
 	//	Time to get back up
 	else {
-		if rotation > -5 or rotation < 5 {
+		if (abs(rotation) - 0) > 3 {
 			rotation = lerp(rotation,0,0.5)	
 		} else {
 			knockedDown = false		
 		}
 	}
+}
+
+if damagedTimer > 0 damagedTimer-- 
+else if damaged {
+	damaged = false
 }
 
 collisionCheck()

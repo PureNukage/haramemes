@@ -5,16 +5,6 @@
     "name": "playerInput",
     "eventList": [
         {
-            "id": "318e0146-8fd4-45eb-bd2f-896693976717",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 64,
-            "eventtype": 8,
-            "m_owner": "c8b36858-e9c0-40b4-9eb8-f8d8c53a1808"
-        },
-        {
             "id": "f3c8c362-1ce0-45ca-859c-463c6a965868",
             "modelName": "GMEvent",
             "mvc": "1.0",
