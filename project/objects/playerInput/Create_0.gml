@@ -8,6 +8,7 @@ spacePressed = keyboard_check_pressed(vk_space)
 
 qPressed = keyboard_check_pressed(ord("Q"))
 qPress = keyboard_check(ord("Q"))
+qRelease = keyboard_check_released(ord("Q"))
 
 ////	Controller
 gamepadAxisLH = gamepad_axis_value(0, gp_axislh)
@@ -16,6 +17,7 @@ gamepadAxisLV = gamepad_axis_value(0, gp_axislv)
 gamepadKey1Pressed = gamepad_button_check_pressed(0, gp_face1)
 gamepadKey2Pressed = gamepad_button_check_pressed(0, gp_face3)
 gamepadKey2Press = gamepad_button_check(0, gp_face3)
+gamepadKey2Released = gamepad_button_check_released(0, gp_face3)
 
 
 ////	Variables
@@ -26,6 +28,7 @@ jump = max(spacePressed, gamepadKey1Pressed)
 
 punch = max(qPress, gamepadKey2Pressed)
 punchHold = max(qPressed, gamepadKey2Press)
+punchRelease = max(qRelease, gamepadKey2Released)
 
 
-gamepad_set_axis_deadzone(0, 0.05)
+gamepad_set_axis_deadzone(0, 0.1)

@@ -4,6 +4,7 @@
 hspd = input.hspd
 vspd = input.vspd
 
+if hspd != 0 or vspd != 0
 Direction = point_direction(0,0,hspd,vspd)
 
 accl = point_distance(0,0,abs(hspd),abs(vspd))

@@ -231,6 +231,14 @@
             }
         },
         {
+            "Key": "92f965e0-2df7-4b72-901e-feb539ecfed0",
+            "Value": {
+                "id": "14f47bf2-3259-40ff-8730-b3bea8dcd252",
+                "resourcePath": "scripts\\getPunched\\getPunched.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "93566aad-c3b3-48a9-8fa7-9c5ee19f74ac",
             "Value": {
                 "id": "988dbb20-9a22-4c06-a79f-ca5ebf82e9a9",
@@ -454,7 +462,8 @@
         "a8d76ebc-7b18-4920-9eb1-3312828bcb51",
         "87e03ee9-363b-4736-9a47-ae0481a6dae2",
         "ee03dda5-62dc-492d-8e6f-caeb28d37899",
-        "77fc946a-6e30-4a1c-8f82-b52fc763074a"
+        "77fc946a-6e30-4a1c-8f82-b52fc763074a",
+        "92f965e0-2df7-4b72-901e-feb539ecfed0"
     ],
     "tutorial": ""
 }

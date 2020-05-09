@@ -2,9 +2,6 @@ switch(states)
 {
 	#region Free
 		case states.free:
-		
-			//	Player movement
-			//var Direction = point_direction(0,0,input.hspd,input.vspd)
 				
 			playerMovement()
 			
@@ -107,24 +104,18 @@ switch(states)
 			z = y
 			
 			//	I am queuing up a second punch
-			if input.punch and image_index < sprite_get_number(sprite_index)-2 {
+			if input.punch and image_index > 1 {
 				punchCharge = 1
+				if input.hspd != 0 or input.vspd != 0 {
+					Direction = point_direction(0,0,input.hspd,input.vspd)
+				}
+				states = states.punch2
+				image_index = 0
 			}
 			
 			force = applyForce(Direction,force)
 			
-			mask_index = s_gorilla_punch1
-			if place_meeting(x + xx, y + yy, enemy) {
-				var Enemy = instance_place(x + xx, y + yy, enemy)
-				with Enemy {
-					damaged = true
-					damagedTimer = 15
-					force = other.force + 4
-					Direction = point_direction(other.x,other.y,x,y)	
-				}
-				
-			}
-			mask_index = s_gorilla_idle
+			getPunched(2, s_gorilla_punch1)
 			
 			//	My punch is over
 			if animation_end { 
@@ -134,15 +125,15 @@ switch(states)
 					states = states.free	
 					movespeedMax = 5
 				} 
-				//	I am punching again!
-				else {
-					if input.hspd != 0 or input.vspd != 0 {
-						Direction = point_direction(0,0,input.hspd,input.vspd)
-						force = 20
-					}
-					states = states.punch2
-					image_index = 0
-				}
+				////	I am punching again!
+				//else {
+				//	if input.hspd != 0 or input.vspd != 0 {
+				//		Direction = point_direction(0,0,input.hspd,input.vspd)
+				//	}
+				//	punchCharge = 0
+				//	states = states.punch2
+				//	image_index = 0
+				//}
 			}
 			
 		break	
@@ -151,28 +142,32 @@ switch(states)
 		case states.punch2:
 			
 			sprite_index = s_gorilla_punch2
-			image_speed = 1
 			
-			//	I am starting to charge my punch
-			if input.punch and punchCharge == 0 and image_index < 2 {
-				punchCharge = 1	
-				image_speed = 0
+			//	I am changing this punch
+			if input.punchHold and punchCharge > 0 {
 				image_index = 1
-			}
-			
-			//	I am charging my punch
-			if punchCharge > 0 {
+				image_speed = 0
 				punchCharge++
-				image_index = 1
-				image_speed = 0
-				
-				//	I am done charging my punch
-				if !input.punchHold or punchChargeRadius >= punchChargeRadiusMax-5 {
-					punchCharge = 0	
+				punchCharge = clamp(punchCharge, 0, punchChargeMax)
+				if input.hspd != 0 or input.vspd != 0 
+				Direction = point_direction(0,0,input.hspd,input.vspd)
+				//	I am punching
+				if input.punchRelease or punchChargeRadius > punchChargeRadiusMax-5 {
+					
+					force = force + punchCharge
+					
+					punchCharge = 0
+					
 					punchChargePunch = true
-					image_speed = 1
-					image_index = 2
+			
+				}	
+			} else {	
+				if punchCharge > 0 {
+					force = force + punchCharge
+					punchCharge = 0
+					punchChargePunch = true
 				}
+				image_speed = 1	
 			}
 			
 			//	I am charge punching
@@ -180,18 +175,7 @@ switch(states)
 				force = applyForce(Direction,force)
 			}
 			
-			mask_index = s_gorilla_punch1
-			if place_meeting(x + xx, y + yy, enemy) {
-				var Enemy = instance_place(x + xx, y + yy, enemy)
-				with Enemy {
-					damaged = true
-					damagedTimer = 15
-					force = other.force + other.force/2
-					Direction = point_direction(other.x,other.y,x,y)	
-				}
-				
-			}
-			mask_index = s_gorilla_idle
+			getPunched(force/2, s_gorilla_punch2)
 			
 			//	I am on the ground
 			groundX = x
