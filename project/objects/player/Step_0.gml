@@ -14,6 +14,8 @@ switch(states)
 				states = states.jump	
 			}
 			
+			smash = false
+			
 			//	I am punching
 			if input.punch {
 				states = states.punch1
@@ -72,12 +74,12 @@ switch(states)
 				onGround = true
 				states = states.free
 				
-				//	Make smash decal
+				//	SMASH
 				if goSmash {
 					var Decal = instance_create_layer(x,y,"Instances",decal)
 					Decal.timer = 120
+					smash = true
 				}
-				
 				goSmash = false
 				grav = 1
 				movespeedMax = 5
