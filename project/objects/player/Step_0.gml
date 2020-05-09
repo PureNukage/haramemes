@@ -125,15 +125,7 @@ switch(states)
 					states = states.free	
 					movespeedMax = 5
 				} 
-				////	I am punching again!
-				//else {
-				//	if input.hspd != 0 or input.vspd != 0 {
-				//		Direction = point_direction(0,0,input.hspd,input.vspd)
-				//	}
-				//	punchCharge = 0
-				//	states = states.punch2
-				//	image_index = 0
-				//}
+
 			}
 			
 		break	
@@ -154,7 +146,7 @@ switch(states)
 				//	I am punching
 				if input.punchRelease or punchChargeRadius > punchChargeRadiusMax-5 {
 					
-					force = force + punchCharge
+					force = force + (punchCharge*2)
 					
 					punchCharge = 0
 					
@@ -163,7 +155,7 @@ switch(states)
 				}	
 			} else {	
 				if punchCharge > 0 {
-					force = force + punchCharge
+					force = force + (punchCharge*2)
 					punchCharge = 0
 					punchChargePunch = true
 				}

@@ -4,7 +4,7 @@ draw_ellipse(groundX-24,groundY-3,groundX+24,groundY+3,false)
 
 //	Charge Punch
 if states == states.punch2 {
-	if input.punchHold and punchCharge > 4 {
+	if input.punchHold and punchCharge > 5 {
 		
 		//	Draw white circle around fist
 		draw_set_color(c_white)
