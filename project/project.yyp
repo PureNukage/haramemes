@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "381509b0-f84f-4772-a4fa-eb592e57a9fe",
+            "Value": {
+                "id": "81b82d33-25cd-429e-9ec7-b745024dd660",
+                "resourcePath": "scripts\\scale_canvas\\scale_canvas.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3b769382-5a6a-4347-9b8b-2984b6c8bad7",
             "Value": {
                 "id": "227cc151-79f8-4be0-ae49-a4468cdad028",
@@ -375,6 +383,14 @@
             }
         },
         {
+            "Key": "bceed65d-7b47-4cfb-8b0c-a4549600d3c8",
+            "Value": {
+                "id": "32db711d-dcd1-4ab6-885d-d27817a0f6ca",
+                "resourcePath": "objects\\camera\\camera.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c4aaa368-a985-4713-9e23-7082712c2c43",
             "Value": {
                 "id": "23726d96-4cfa-4640-92df-8be4414e861a",
@@ -548,7 +564,8 @@
         "90867eef-4568-4719-8a57-9b74ecea5fcf",
         "93e872a1-b621-4efa-a124-84b85b743296",
         "e4a908be-001a-4369-93d8-ddf623192fde",
-        "4f7adb85-a508-46f4-a116-389186bc7ee9"
+        "4f7adb85-a508-46f4-a116-389186bc7ee9",
+        "381509b0-f84f-4772-a4fa-eb592e57a9fe"
     ],
     "tutorial": ""
 }

@@ -22,7 +22,9 @@ if (place_meeting(x + xx, y + yy, enemy) and image_speed > 0) {
 			var bloodScatterY = irandom_range(-10,10)
 			var bloodMist = instance_create_layer(x+bloodScatterX,y+bloodScatterY,"Instances",particle)
 			bloodMist.zAccl = 6
-			force -= Force/3	
+			force -= Force/3
+			camera.screenShakeX = irandom_range(-10,10)
+			camera.screenShakeY = irandom_range(-10,10)
 		}
 	}	
 }
