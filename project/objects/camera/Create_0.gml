@@ -14,7 +14,13 @@ screenShakeY = 0
 xx = 0
 yy = 0
 
-scale_canvas(base_width,base_height,1280,720,true)
+if target > -1 {
+	x = target.x
+	y = target.y
+}
+
+debug_log("window_width: " + string(window_get_width()))
+debug_log("window_height: " + string(window_get_height()))
 
 #region Enabling Use of Views
 
@@ -25,6 +31,9 @@ scale_canvas(base_width,base_height,1280,720,true)
 
 	view_set_wport(0,width)
 	view_set_hport(0,height)
+	
+	debug_log("window_width: " + string(window_get_width()))
+	debug_log("window_height: " + string(window_get_height()))
 
 #endregion
 #region Resize and Center Game Window
@@ -34,7 +43,9 @@ scale_canvas(base_width,base_height,1280,720,true)
 	surface_resize(application_surface,view_wport[0],view_hport[0])
 	
 	display_set_gui_size(width,height)
-
+	
+	debug_log("window_width: " + string(window_get_width()))
+	debug_log("window_height: " + string(window_get_height()))
 
 #endregion
 #region Camera Create
@@ -59,7 +70,16 @@ scale_canvas(base_width,base_height,1280,720,true)
 	
 #endregion
 
-if target > -1 {
-	x = target.x
-	y = target.y
-}
+scale_canvas(base_width,base_height,1280,720,true)
+
+debug_log("window_width: " + string(window_get_width()))
+debug_log("window_height: " + string(window_get_height()))
+
+debug_log("display_width: "+string(display_get_width()))
+debug_log("display_height: "+string(display_get_height()))
+
+debug_log("camera_width: "+string(camera_get_view_width(Camera)))
+debug_log("camera_height: "+string(camera_get_view_height(Camera)))
+
+debug_log("view_wport: "+string(view_get_wport(0)))
+debug_log("view_hport: "+string(view_get_hport(0)))

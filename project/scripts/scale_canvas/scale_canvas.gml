@@ -27,4 +27,6 @@ if (_center)
 
 //var extra_quality = 2
 
+//camera_set_view_size(Camera,window_get_width(),window_get_height())
+
 surface_resize(application_surface,min(window_get_width(),_base_width),min(window_get_height(),_base_height))

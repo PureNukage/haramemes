@@ -9,7 +9,9 @@ if target > -1 {
 	
 	var spd = max(xx, yy)
 	
-	x = lerp(x, xx, 0.05)
-	y = lerp(y, yy, 0.05)
+	x = round(lerp(x, xx, 0.05))
+	y = round(lerp(y, yy, 0.05))
 
 }
+
+scale_canvas(base_width,base_height,1280,720,true)
