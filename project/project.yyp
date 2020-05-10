@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "19ad9e40-fa41-45ab-85f0-b6f2959e0ff0",
+            "Value": {
+                "id": "0c34eca4-292f-48f2-9e73-19767fa32315",
+                "resourcePath": "scripts\\applyGravity\\applyGravity.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "212240cc-f84a-467a-8722-2abcbec941f6",
             "Value": {
                 "id": "3bca3abd-86c1-4535-8d16-d3e0d301f744",
@@ -124,6 +132,14 @@
                 "id": "1523febe-8c51-4a88-a459-f60a29e4f98b",
                 "resourcePath": "objects\\enemy\\enemy.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "4f7adb85-a508-46f4-a116-389186bc7ee9",
+            "Value": {
+                "id": "622e99c6-1edc-4c41-85ea-32f350868708",
+                "resourcePath": "scripts\\enemySplatCheck\\enemySplatCheck.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -239,6 +255,22 @@
             }
         },
         {
+            "Key": "90867eef-4568-4719-8a57-9b74ecea5fcf",
+            "Value": {
+                "id": "e3d44896-ed13-4591-bb69-e0ff92ec75b7",
+                "resourcePath": "scripts\\triggerSlowmo\\triggerSlowmo.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "9254be2a-2824-4929-bc62-9ed00c689392",
+            "Value": {
+                "id": "a4e5ed00-2b69-42ff-a0fd-5948309dc456",
+                "resourcePath": "sprites\\s_test\\s_test.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "92f965e0-2df7-4b72-901e-feb539ecfed0",
             "Value": {
                 "id": "14f47bf2-3259-40ff-8730-b3bea8dcd252",
@@ -260,6 +292,14 @@
                 "id": "4bde98f8-5213-401b-a9e7-a837cc05b18c",
                 "resourcePath": "views\\93c2d9a6-2b01-40a5-8b0a-4d86dfa39125.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "9d038da7-dacb-4f2d-aa8a-9bf20f56d273",
+            "Value": {
+                "id": "1a5c61e7-5b7a-4954-8fec-ff88cf40fbd6",
+                "resourcePath": "sprites\\s_splatter\\s_splatter.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -399,6 +439,14 @@
             }
         },
         {
+            "Key": "e4a908be-001a-4369-93d8-ddf623192fde",
+            "Value": {
+                "id": "b1d7a4db-c6e7-4c41-b430-cf8a3f354459",
+                "resourcePath": "scripts\\drawSplat\\drawSplat.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e4af4f9f-2467-4587-a64e-2e57850f4b32",
             "Value": {
                 "id": "16ed36af-241c-4d01-90d6-98f35b8662cd",
@@ -467,11 +515,15 @@
         "06a3b5d7-3e6f-49be-9c3e-e2451808fa47",
         "ef6cb8b8-7744-40bb-aa4a-e14a2317e7ce",
         "6abaade6-c677-4794-8da3-cb00f76a1c08",
+        "19ad9e40-fa41-45ab-85f0-b6f2959e0ff0",
         "a8d76ebc-7b18-4920-9eb1-3312828bcb51",
         "87e03ee9-363b-4736-9a47-ae0481a6dae2",
         "ee03dda5-62dc-492d-8e6f-caeb28d37899",
         "77fc946a-6e30-4a1c-8f82-b52fc763074a",
-        "92f965e0-2df7-4b72-901e-feb539ecfed0"
+        "92f965e0-2df7-4b72-901e-feb539ecfed0",
+        "90867eef-4568-4719-8a57-9b74ecea5fcf",
+        "e4a908be-001a-4369-93d8-ddf623192fde",
+        "4f7adb85-a508-46f4-a116-389186bc7ee9"
     ],
     "tutorial": ""
 }

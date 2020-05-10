@@ -3,7 +3,7 @@ event_inherited()
 input = playerInput.id
 
 punchCharge = 0
-punchChargeMax = 10
+punchChargeMax = 8
 punchChargePunch = false
 punchChargeRadius = 16
 punchChargeRadiusMax = 36

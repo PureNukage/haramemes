@@ -14,10 +14,16 @@ qRelease = keyboard_check_released(ord("Q"))
 gamepadAxisLH = gamepad_axis_value(0, gp_axislh)
 gamepadAxisLV = gamepad_axis_value(0, gp_axislv)
 
+gamepadAxisRH = gamepad_axis_value(0, gp_axisrh)
+gamepadAxisRV = gamepad_axis_value(0, gp_axisrv)
+
 gamepadKey1Pressed = gamepad_button_check_pressed(0, gp_face1)
 gamepadKey2Pressed = gamepad_button_check_pressed(0, gp_face3)
 gamepadKey2Press = gamepad_button_check(0, gp_face3)
 gamepadKey2Released = gamepad_button_check_released(0, gp_face3)
+gamepadKey3Press = gamepad_button_check_pressed(0, gp_face2)
+
+gamepadSelectPress = gamepad_button_check_pressed(0 ,gp_select)
 
 
 ////	Variables

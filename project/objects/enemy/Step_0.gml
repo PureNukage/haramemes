@@ -1,25 +1,19 @@
 switch(states)
 {
-	case states.free:
+	#region Free
+		case states.free:
 	
-		groundX = x
-		groundY = y
+			groundX = x
+			groundY = y
 	
-		z = y
+			z = y
 		
-	break	
+		break	
+	#endregion
+	#region Jump
 	case states.jump:
-		//	I am going up or down during this jump
-		z -= zAccl
-			
-		//	Applying gravity to accelerant
-		zAccl -= grav
-			
-		//	Keep my shadow following my x-position
-		groundX = x
-			
-		//	I am visually in the air!
-		y = z
+
+		applyGravity()
 			
 		//	I am in the air!
 		if y < groundY {
@@ -38,6 +32,13 @@ switch(states)
 			yy = 0
 		}
 	break
+	#endregion
+	#region Splat
+		case states.splat:
+			
+			
+		break
+	#endregion
 }
 
 force = applyForce(Direction,force)
@@ -65,3 +66,5 @@ else if damaged {
 }
 
 collisionCheck()
+
+depth = -y

@@ -13,7 +13,7 @@ if states == states.punch2 {
 		//	Draw charging white circle
 		draw_set_alpha(0.5)
 		draw_circle(x + (image_xscale * 21), y - 54, punchChargeRadius, false)
-		punchChargeRadius = lerp(punchChargeRadius, punchChargeRadiusMax, 0.05)
+		punchChargeRadius = lerp(punchChargeRadius, punchChargeRadiusMax, 0.05) 
 		draw_set_alpha(1)
 		
 	}

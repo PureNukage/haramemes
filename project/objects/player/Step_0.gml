@@ -41,20 +41,11 @@ switch(states)
 		
 			sprite_index = s_gorilla_jump
 			
-			//	I am going up or down during this jump
-			z -= zAccl
-			
-			//	Applying gravity to accelerant
-			zAccl -= grav
-			
-			//	Keep my shadow following my x-position
-			groundX = x
-			
-			//	I am visually in the air!
-			y = z
+			applyGravity()
 			
 			//	I am jump smashing
-			if input.punch and !goSmash and zAccl > 0 and !instance_exists(decal) {
+			//if input.punch and !goSmash and zAccl > 0 and !instance_exists(decal) {
+			if input.punch and !goSmash and zAccl > 0 {
 				goSmash = true
 				grav = 1
 				zAccl += 5
@@ -115,7 +106,7 @@ switch(states)
 			
 			force = applyForce(Direction,force)
 			
-			getPunched(2, s_gorilla_punch1)
+			getPunched(force + 2, s_gorilla_punch1)
 			
 			//	My punch is over
 			if animation_end { 
@@ -136,7 +127,7 @@ switch(states)
 			sprite_index = s_gorilla_punch2
 			
 			//	I am changing this punch
-			if input.punchHold and punchCharge > 0 {
+			if input.punchHold and punchCharge > 0 and !punchChargePunch {
 				image_index = 1
 				image_speed = 0
 				punchCharge++
@@ -146,28 +137,29 @@ switch(states)
 				//	I am punching
 				if input.punchRelease or punchChargeRadius > punchChargeRadiusMax-5 {
 					
-					force = force + (punchCharge*2)
+					force = force + (punchCharge/2)
 					
-					punchCharge = 0
+					//punchCharge = 0
 					
 					punchChargePunch = true
 			
 				}	
 			} else {	
 				if punchCharge > 0 {
-					force = force + (punchCharge*2)
-					punchCharge = 0
+					force = force + (punchCharge/2)
+					//punchCharge = 0
 					punchChargePunch = true
 				}
-				image_speed = 1	
+				image_speed = 1
 			}
 			
 			//	I am charge punching
 			if punchChargePunch {
 				force = applyForce(Direction,force)
+				getPunched(force*2 + punchCharge*2, s_gorilla_punch2)
+				if punchCharge > 0 punchCharge -= fric * app.gameTime
 			}
 			
-			getPunched(force/2, s_gorilla_punch2)
 			
 			//	I am on the ground
 			groundX = x

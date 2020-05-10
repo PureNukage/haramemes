@@ -10,3 +10,20 @@ if damaged {
 draw_sprite_ext(sprite,0,x,y,1,1,rotation,c_white,1)
 
 shader_reset()
+
+//	States
+switch(states)
+{
+	#region Splat
+		case states.splat:
+			
+			drawSplat()
+			
+			if force > 30 instance_destroy() else {
+				states = states.free
+				force = 0	
+			}
+			
+		break
+	#endregion
+}
