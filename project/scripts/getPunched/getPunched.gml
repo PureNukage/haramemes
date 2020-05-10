@@ -18,11 +18,13 @@ if (place_meeting(x + xx, y + yy, enemy) and image_speed > 0) {
 			force += Force
 			Direction = point_direction(other.x,other.y,groundX,groundY)
 			if other.punchChargePunch triggerSlowmo(0,1)
-			var bloodMist = instance_create_layer(x,y,"Instances",particle)
+			var bloodScatterX = irandom_range(-10,10)
+			var bloodScatterY = irandom_range(-10,10)
+			var bloodMist = instance_create_layer(x+bloodScatterX,y+bloodScatterY,"Instances",particle)
 			bloodMist.zAccl = 6
+			force -= Force/3	
 		}
-	}
-				
+	}	
 }
 
 mask_index = oldMask
