@@ -111,4 +111,4 @@ smashCheck()
 
 collisionCheck()
 
-depth = -y
+depth = -groundY

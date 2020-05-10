@@ -67,4 +67,4 @@ else if damaged {
 
 collisionCheck()
 
-depth = -y
+depth = -groundY
