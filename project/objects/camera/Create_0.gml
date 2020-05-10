@@ -14,6 +14,8 @@ screenShakeY = 0
 xx = 0
 yy = 0
 
+scale_canvas(base_width,base_height,1280,720,true)
+
 #region Enabling Use of Views
 
 	view_enabled = true
@@ -61,5 +63,3 @@ if target > -1 {
 	x = target.x
 	y = target.y
 }
-
-//scale_canvas(base_width,base_height,1280,720,true)

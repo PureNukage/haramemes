@@ -1,4 +1,4 @@
-if !onGround applyGravity()
+if !onGround applyThrust()
 
 //	If in the air
 if y < groundY {

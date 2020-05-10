@@ -8,7 +8,7 @@ if ds_list_empty(smashList) {
 		knockedDown = true
 		states = states.jump
 		timer = 120
-		zAccl = 8
+		thrust = 8
 	}
 	
 	triggerSlowmo(0.1,120)

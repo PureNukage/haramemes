@@ -7,8 +7,9 @@
         "06a3b5d7-3e6f-49be-9c3e-e2451808fa47",
         "ef6cb8b8-7744-40bb-aa4a-e14a2317e7ce",
         "cfb101dd-71c4-4506-8b02-e4b2bf6630e6",
-        "e4a908be-001a-4369-93d8-ddf623192fde",
-        "4f7adb85-a508-46f4-a116-389186bc7ee9",
+        "d7c49b6b-881a-4484-8f92-5659e1c32af2",
+        "a32c9f9b-9b93-4b70-b115-d6120c9c8776",
+        "a8d76ebc-7b18-4920-9eb1-3312828bcb51",
         "381509b0-f84f-4772-a4fa-eb592e57a9fe"
     ],
     "filterType": "GMScript",

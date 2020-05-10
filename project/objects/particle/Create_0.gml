@@ -1,5 +1,5 @@
 sprite = s_mist
-zAccl = 0
+thrust = 0
 z = y
 grav = 1
 onGround = false

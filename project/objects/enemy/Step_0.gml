@@ -2,18 +2,15 @@ switch(states)
 {
 	#region Free
 		case states.free:
-	
-			groundX = x
-			groundY = y
-	
-			z = y
+		
+		if !onGround applyThrust()
 		
 		break	
 	#endregion
 	#region Jump
 	case states.jump:
 
-		applyGravity()
+		applyThrust()
 			
 		//	I am in the air!
 		if y < groundY {
@@ -27,7 +24,7 @@ switch(states)
 			movespeedMax = 5
 			movespeed = 0
 				
-			zAccl = 0
+			thrust = 0
 			xx = 0
 			yy = 0
 		}
@@ -58,6 +55,14 @@ if knockedDown {
 			knockedDown = false		
 		}
 	}
+}
+
+if onGround {
+	//	I am on the ground
+	z = y
+	groundX = x
+	groundY = y	
+	if movespeed < 0 movespeed = 0
 }
 
 if damagedTimer > 0 damagedTimer-- 

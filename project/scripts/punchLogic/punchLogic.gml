@@ -54,7 +54,7 @@ else {
 		}
 	} else {
 		var slap = -1
-		if punchChargePunch slap = punchCharge
+		if punchChargePunch slap = punchCharge*1.2
 		else slap = punchCharge
 		getPunched(force + slap, Mask)	
 	}

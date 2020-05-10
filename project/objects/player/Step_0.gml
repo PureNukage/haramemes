@@ -5,10 +5,13 @@ switch(states)
 				
 			playerMovement()
 			
+			if !onGround applyThrust()
+			
 			//	I am jumping
-			if input.jump {
-				zAccl = 10
-				states = states.jump	
+			if input.jump and onGround {
+				//onGround = false
+				thrust = 10
+				states = states.jump
 			}
 			
 			smash = false
@@ -37,14 +40,13 @@ switch(states)
 		
 			sprite_index = s_gorilla_jump
 			
-			applyGravity()
+			applyThrust()
 			
 			//	I am jump smashing
-			//if input.punch and !goSmash and zAccl > 0 and !instance_exists(decal) {
-			if input.punch and !goSmash and zAccl > 0 {
+			if input.punch and !goSmash and thrust > 0 {
 				goSmash = true
 				grav = 1
-				zAccl += 5
+				thrust += 5
 				movespeedMax = 8
 				
 			}
@@ -72,7 +74,7 @@ switch(states)
 				movespeedMax = 5
 				movespeed = 0
 				
-				zAccl = 0
+				thrust = 0
 				xx = 0
 				yy = 0
 			}

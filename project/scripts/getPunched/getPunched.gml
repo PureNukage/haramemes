@@ -23,18 +23,29 @@ if (place_meeting(x + xx, y + yy, enemy) and image_speed > 0) {
 			var bloodScatterX = irandom_range(-10,10)
 			var bloodScatterY = irandom_range(-10,10)
 			var bloodMist = instance_create_layer(x+bloodScatterX,y+bloodScatterY,"Instances",particle)
-			bloodMist.zAccl = 6
+			bloodMist.thrust = 6
+			bloodMist.groundX = groundX+bloodScatterX
+			bloodMist.groundY = groundY+bloodScatterY
 			force -= Force/3
 			camera.screenShakeX = irandom_range(-10,10)
 			camera.screenShakeY = irandom_range(-10,10)
 			
-			//	Knockup
+			////	Knockup
+			//	enemy on the ground, player is ChargePunching
 			if onGround and other.punchChargePunch {
-				states = states.jump
-				zAccl += Force
+				if onGround { onGround = false thrust += Force/3 }
 			}
+			//	enemy on the gruond, player is NOT ChargePunching
+			else if onGround and !other.punchChargePunch {
+				if onGround { onGround = false thrust += Force/2 }
+			}
+			//	enemy in the air and player is not ChargePunching
 			if !onGround and !other.punchChargePunch {
-				zAccl += Force
+				if onGround { onGround = false thrust += Force/4 }
+			}
+			//	enemy in the air and player is ChargePunching
+			else if !onGround and other.punchChargePunch {
+				onGround = false thrust += Force/8
 			}
 		}
 	}	
