@@ -17,7 +17,9 @@ if (place_meeting(x + xx, y + yy, enemy) and image_speed > 0) {
 			damagedTimer = 15
 			force += Force
 			Direction = point_direction(other.x,other.y,groundX,groundY)
-			if other.punchChargePunch triggerSlowmo(0.1,15)
+			if other.punchChargePunch triggerSlowmo(0,1)
+			var bloodMist = instance_create_layer(x,y,"Instances",particle)
+			bloodMist.zAccl = 6
 		}
 	}
 				

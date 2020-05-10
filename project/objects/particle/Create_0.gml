@@ -1,0 +1,9 @@
+sprite = s_mist
+zAccl = 0
+z = y
+grav = 1
+onGround = false
+groundX = x
+groundY = y
+size = random_range(0.75,1)
+rotation = irandom_range(0,360)

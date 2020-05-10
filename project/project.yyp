@@ -511,6 +511,14 @@
             }
         },
         {
+            "Key": "f189af43-0d1f-4cf5-92ad-596874ca6426",
+            "Value": {
+                "id": "572d8ae9-09c1-468e-ade0-edb5e15ef847",
+                "resourcePath": "objects\\particle\\particle.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f3d55a5c-c8a8-4ad0-ae5a-55a52480793b",
             "Value": {
                 "id": "e3c757dd-7828-4a81-9d13-767e4fb1b937",
