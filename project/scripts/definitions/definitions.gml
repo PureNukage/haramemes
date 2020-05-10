@@ -16,3 +16,5 @@ enum decal_types {
 #macro animation_end (image_index > image_number - 1)
 
 #macro forceMax 50
+
+#macro c_driedBlood make_color_rgb(180,0,0)

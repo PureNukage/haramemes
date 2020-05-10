@@ -18,7 +18,7 @@ for(var i=0;i<splatStatesCount;i++) {
 		var XX = lengthdir_x(force,Direction)
 		var YY = lengthdir_y(force,Direction)
 	
-		draw_sprite_ext(s_splatter,i,groundX+XX,groundY+YY,1,1,abs(Direction),c_red,1)
+		draw_sprite_ext(s_splatter,i,groundX+XX,groundY+YY,1,1,abs(Direction),c_driedBlood,1)
 		
 		surface_reset_target()
 		

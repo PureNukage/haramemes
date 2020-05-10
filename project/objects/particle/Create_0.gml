@@ -7,3 +7,6 @@ groundX = x
 groundY = y
 size = random_range(0.75,1)
 rotation = irandom_range(0,360)
+wallSplat = false
+Direction = 0
+force = 0
