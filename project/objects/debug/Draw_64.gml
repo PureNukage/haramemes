@@ -26,14 +26,21 @@ if on {
 		e[states.jump] = "Jump"
 		e[states.punch1] = "Punch1"
 		e[states.punch2] = "Punch2"
-		draw_text(XX,YY,e[states])
+		draw_text(XX,YY,e[states])								YY += 15
+		
+		draw_text(XX,YY,"force: "+string(force))				YY += 15
+		
+		if object_index == player {
+			draw_text(XX,YY,"movespeed: "+string(movespeed))				YY += 15
+			draw_text(XX,YY,"punchChargePunch: "+string(punchChargePunch))	YY += 15
+			draw_text(XX,YY,"punchCharge: "+string(punchCharge))			YY += 15
+			
+		}
 	
 		if object_index == enemy {
-			YY += 15
 			draw_text(XX,YY,"knockedDown: "+string(knockedDown))	YY += 15
 			//draw_text(XX,YY,"xx: "+string(xx))						YY += 15
 			//draw_text(XX,YY,"yy: "+string(yy))						YY += 15
-			draw_text(XX,YY,"force: "+string(force))				YY += 15
 			
 			//	Draw direction line
 			if force > 0 {

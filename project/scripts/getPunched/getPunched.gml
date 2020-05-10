@@ -11,10 +11,11 @@ mask_index = Mask
 if (place_meeting(x + xx, y + yy, enemy) and image_speed > 0) {
 	var Enemy = instance_place(x + xx, y + yy, enemy)
 	with Enemy {
-		if !damaged {
+		if !damaged and other.damageID != damageID {
+			damageID = other.damageID
 			damaged = true
 			damagedTimer = 15
-			force = Force
+			force += Force
 			Direction = point_direction(other.x,other.y,groundX,groundY)
 			if other.punchChargePunch triggerSlowmo(0.1,15)
 		}

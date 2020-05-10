@@ -8,8 +8,8 @@ if (xx != 0 or yy != 0) {
 	//	Check gameTime
 	if app.gameTime != 1.0 and (absXX != 0 or absYY != 0) {
 		if object_index == player {
-			absXX *= app.gameTime*2
-			absYY *= app.gameTime*2
+			absXX *= app.gameTime
+			absYY *= app.gameTime
 		} else {
 			absXX *= app.gameTime
 			absYY *= app.gameTime
@@ -32,7 +32,7 @@ if (xx != 0 or yy != 0) {
 			else {
 				var inst = instance_place(x + sign(xx), y, block)
 				if enemySplatCheck(inst) states = states.splat	
-				xx = 0
+				//xx = 0
 				XX = floorXX
 			}
 		}
@@ -43,7 +43,7 @@ if (xx != 0 or yy != 0) {
 			else {
 				var inst = instance_place(x , y + sign(yy), block)
 				if enemySplatCheck(inst) states = states.splat	
-				yy = 0
+				//yy = 0
 				YY = floorYY
 			}
 		}
@@ -54,7 +54,7 @@ if (xx != 0 or yy != 0) {
 			else {
 				var inst = instance_place(x + sign(xx), groundY, block)
 				if enemySplatCheck(inst) states = states.splat	
-				xx = 0
+				//xx = 0
 				XX = floorXX
 			}
 		}
@@ -68,7 +68,7 @@ if (xx != 0 or yy != 0) {
 			else {
 				var inst = instance_place(x , groundY + sign(yy), block)
 				if enemySplatCheck(inst) if object_index == enemy states = states.splat	
-				yy = 0
+				//yy = 0
 				YY = floorYY
 			}
 		}

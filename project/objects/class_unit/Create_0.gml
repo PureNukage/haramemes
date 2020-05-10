@@ -14,6 +14,7 @@ groundX = x
 groundY = y
 onGround = true
 Direction = 0
+timer = -1
 
 ////	Set Variables
 input = -1

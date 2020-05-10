@@ -11,7 +11,7 @@ if ds_list_empty(smashList) {
 		zAccl = 8
 	}
 	
-	triggerSlowmo(0.1,180)
+	triggerSlowmo(0.1,120)
 	
 	ds_list_delete(smashList,0)
 }

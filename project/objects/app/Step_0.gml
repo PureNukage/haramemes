@@ -7,7 +7,7 @@ if input.gamepadAxisRH != 0 {
 //	If Slowmo is active
 if slowmo > 0 slowmo--
 //	Slowmo just finished
-else {
+else if slowmo == 0 {
 	gameTime = 1.0
 	slowmo = -1	
 }

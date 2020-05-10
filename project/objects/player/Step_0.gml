@@ -13,24 +13,20 @@ switch(states)
 			
 			smash = false
 			
+			force = applyForce(Direction,force)
+			
 			//	I am punching
 			if input.punch {
+				damageID = time.stream
 				states = states.punch1
-				if input.hspd != 0 or input.vspd != 0 {
-					Direction = point_direction(0,0,hspd,vspd)
-					force = 12
-				}
-				movespeed = 0
-				xx = 0
-				yy = 0
+				sprite_index = s_gorilla_punch1
+				punchCharge = 1
+				//force += abs(movespeed/2)
 				image_index = 0
+				exit
 			}
 			
-			//	I am on the ground
 			onGround = true
-			z = y
-			groundX = x
-			groundY = y
 			
 		break
 	#endregion
@@ -59,6 +55,7 @@ switch(states)
 			} 
 			//	I have landed
 			else {
+				y = groundY
 				onGround = true
 				states = states.free
 				
@@ -86,38 +83,8 @@ switch(states)
 		case states.punch1:
 			
 			sprite_index = s_gorilla_punch1
-			image_speed = 1
 			
-			//	I am on the ground
-			groundX = x
-			groundY = y
-			onGround = true
-			z = y
-			
-			//	I am queuing up a second punch
-			if input.punch and image_index > 1 {
-				punchCharge = 1
-				if input.hspd != 0 or input.vspd != 0 {
-					Direction = point_direction(0,0,input.hspd,input.vspd)
-				}
-				states = states.punch2
-				image_index = 0
-			}
-			
-			force = applyForce(Direction,force)
-			
-			getPunched(force + 2, s_gorilla_punch1)
-			
-			//	My punch is over
-			if animation_end { 
-				
-				//	I am not punching again
-				if !punchCharge {
-					states = states.free	
-					movespeedMax = 5
-				} 
-
-			}
+			punchLogic(states.punch2, sprite_index)			
 			
 		break	
 	#endregion
@@ -126,57 +93,18 @@ switch(states)
 			
 			sprite_index = s_gorilla_punch2
 			
-			//	I am changing this punch
-			if input.punchHold and punchCharge > 0 and !punchChargePunch {
-				image_index = 1
-				image_speed = 0
-				punchCharge++
-				punchCharge = clamp(punchCharge, 0, punchChargeMax)
-				if input.hspd != 0 or input.vspd != 0 
-				Direction = point_direction(0,0,input.hspd,input.vspd)
-				//	I am punching
-				if input.punchRelease or punchChargeRadius > punchChargeRadiusMax-5 {
-					
-					force = force + (punchCharge/2)
-					
-					//punchCharge = 0
-					
-					punchChargePunch = true
-			
-				}	
-			} else {	
-				if punchCharge > 0 {
-					force = force + (punchCharge/2)
-					//punchCharge = 0
-					punchChargePunch = true
-				}
-				image_speed = 1
-			}
-			
-			//	I am charge punching
-			if punchChargePunch {
-				force = applyForce(Direction,force)
-				getPunched(force*2 + punchCharge*2, s_gorilla_punch2)
-				if punchCharge > 0 punchCharge -= fric * app.gameTime
-			}
-			
-			
-			//	I am on the ground
-			groundX = x
-			groundY = y
-			onGround = true
-			z = y
-			
-			if animation_end {
-				punchChargeRadius = 16
-				punchCharge = 0
-				punchChargePunch = false
-				movespeedMax = 5
-				states = states.free	
-			}
+			punchLogic(states.punch1, sprite_index)
 			
 		break
 	#endregion
+}
+
+if onGround {
+	//	I am on the ground
+	z = y
+	groundX = x
+	groundY = y	
+	if movespeed < 0 movespeed = 0
 }
 
 smashCheck()

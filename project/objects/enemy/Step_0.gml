@@ -45,13 +45,13 @@ force = applyForce(Direction,force)
 
 if knockedDown {
 	if timer > 0 {	
-		timer--
+		timer -= 1 * app.gameTime 
 		if abs(rotation) < 87 {
 			rotation = lerp(rotation,90*image_xscale,0.5)
 		}	
 	}	
 	//	Time to get back up
-	else {
+	else if onGround {
 		if (abs(rotation) - 0) > 3 {
 			rotation = lerp(rotation,0,0.5)	
 		} else {

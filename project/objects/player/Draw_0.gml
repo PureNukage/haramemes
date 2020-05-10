@@ -3,16 +3,30 @@ draw_set_color(c_dkgray)
 draw_ellipse(groundX-24,groundY-3,groundX+24,groundY+3,false)
 
 //	Charge Punch
-if states == states.punch2 {
-	if input.punchHold and punchCharge > 5 {
+if states == states.punch2  or states == states.punch1 {
+	if input.punchHold and punchCharge > punchChargeMin {
+		
+		var xOffset = -1
+		var yOffset = -1
+		var side = -1
+		
+		if states == states.punch2 {
+			var xOffset = 21
+			var yOffset = 54
+			side = image_xscale
+		} else {
+			var xOffset = 14
+			var yOffset = 54
+			side = image_xscale*-1
+		}
 		
 		//	Draw white circle around fist
 		draw_set_color(c_white)
-		draw_circle(x + (image_xscale * 21), y - 54, 16, false)
+		draw_circle(x + (side * xOffset), y - yOffset, 16, false)
 		
 		//	Draw charging white circle
 		draw_set_alpha(0.5)
-		draw_circle(x + (image_xscale * 21), y - 54, punchChargeRadius, false)
+		draw_circle(x + (side * xOffset), y - yOffset, punchChargeRadius, false)
 		punchChargeRadius = lerp(punchChargeRadius, punchChargeRadiusMax, 0.05) 
 		draw_set_alpha(1)
 		

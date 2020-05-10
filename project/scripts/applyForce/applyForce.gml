@@ -9,11 +9,14 @@ if app.slowmo == -1 or object_index = player {
 	xx += lengthdir_x(Force,Direction)
 	yy += lengthdir_y(Force,Direction)
 
-	if Force > 0 Force -= fric * app.gameTime
+	if Force > 0 Force -= fric * app.gameTime*2
 	else Force = 0
 	
 }
 
-Force = clamp(Force, 0 , 100)
+var maxForce = -1
+if object_index == enemy maxForce = 100
+else maxForce = 20
+Force = clamp(Force, 0 , maxForce)
 
 return Force
