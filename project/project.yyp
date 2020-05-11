@@ -503,6 +503,14 @@
             }
         },
         {
+            "Key": "e4b2bf44-be2b-4ce1-b46c-00b225082098",
+            "Value": {
+                "id": "d2b99f99-bb2e-4ed7-8cea-f1a0918c9565",
+                "resourcePath": "sprites\\s_gorilla_punch2redo\\s_gorilla_punch2redo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "eaaf35bc-d4ea-4a51-b77f-c98d71c570aa",
             "Value": {
                 "id": "7bcd7b06-a997-4928-884a-b5609523c295",

@@ -16,7 +16,11 @@ if (place_meeting(x + xx, y + yy, enemy) and image_speed > 0) {
 			damaged = true
 			damagedTimer = 15
 			force += Force
-			Direction = point_direction(other.x,other.y,groundX,groundY)
+			Direction = other.Direction
+			
+			with other {
+				debug_log("Punch is applying "+string(Force)+" force to "+string_upper(string((object_get_name(Enemy.object_index)))))
+			}
 			
 			//if other.punchChargePunch triggerSlowmo(0,1)
 			
@@ -26,16 +30,22 @@ if (place_meeting(x + xx, y + yy, enemy) and image_speed > 0) {
 			bloodMist.thrust = 6
 			bloodMist.groundX = groundX+bloodScatterX
 			bloodMist.groundY = groundY+bloodScatterY
-			force -= Force/3
+			
+			
+			other.force = 0
 			camera.screenShakeX = irandom_range(-10,10)
 			camera.screenShakeY = irandom_range(-10,10)
+			
+			//if knockedDown {
+			//	image_xscale = !other.image_xscale
+			//}
 			
 			////	Knockup
 			//	enemy on the ground, player is ChargePunching
 			if onGround and other.punchChargePunch {
 				if onGround { onGround = false thrust += Force/3 }
 			}
-			//	enemy on the gruond, player is NOT ChargePunching
+			//	enemy on the ground, player is NOT ChargePunching
 			else if onGround and !other.punchChargePunch {
 				if onGround { onGround = false thrust += Force/2 }
 			}

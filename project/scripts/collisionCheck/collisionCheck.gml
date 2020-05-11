@@ -11,8 +11,8 @@ if (xx != 0 or yy != 0) {
 			absXX *= app.gameTime
 			absYY *= app.gameTime
 		} else {
-			absXX *= app.gameTime
-			absYY *= app.gameTime
+			absXX *= app.gameTime*0.2
+			absYY *= app.gameTime*0.2
 		}
 	}
 	

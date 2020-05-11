@@ -21,10 +21,13 @@ switch(states)
 			//	I am punching
 			if input.punch {
 				damageID = time.stream
-				states = states.punch1
+				if punch1CD > -1 {
+					states = states.punch2	
+				} else {
+					states = states.punch1
+				}
 				sprite_index = s_gorilla_punch1
-				punchCharge = 1
-				//force += abs(movespeed/2)
+				punchCharge = 9
 				image_index = 0
 				exit
 			}
@@ -93,13 +96,18 @@ switch(states)
 	#region Punch2
 		case states.punch2:
 			
-			sprite_index = s_gorilla_punch2
+			sprite_index = s_gorilla_punch2redo
 			
 			punchLogic(states.punch1, sprite_index)
 			
 		break
 	#endregion
 }
+
+if punch1CD > 0 punch1CD--
+else if punch1CD == 0 {
+	punch1CD = -1
+}	
 
 if onGround {
 	//	I am on the ground

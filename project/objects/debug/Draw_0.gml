@@ -25,6 +25,8 @@ if on {
 			draw_text(XX,YY,"movespeed: "+string(movespeed))				YY += 15
 			draw_text(XX,YY,"punchChargePunch: "+string(punchChargePunch))	YY += 15
 			draw_text(XX,YY,"punchCharge: "+string(punchCharge))			YY += 15
+			draw_text(XX,YY,"punch1CD: "+string(punch1CD))					YY += 15
+			draw_text(XX,YY,"punchChargeQueue: "+string(punchChargeQueue))  YY += 15
 			
 		}
 	

@@ -5,7 +5,8 @@ enum states {
 	punch1,
 	punch2,
 	smash,
-	splat
+	splat,
+	hold
 }
 
 enum decal_types {

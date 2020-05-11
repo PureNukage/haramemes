@@ -4,12 +4,15 @@ input = playerInput.id
 
 damageID = -1
 
+punchQueue = false
 punchCharge = 0
-punchChargeMax = 18
-punchChargeMin = 9
+punchChargeQueue = false
+punchChargeMax = 24
+punchChargeMin = 18
 punchChargePunch = false
 punchChargeRadius = 16
 punchChargeRadiusMax = 36
+punch1CD = -1
 
 goSmash = false
 smash = false
