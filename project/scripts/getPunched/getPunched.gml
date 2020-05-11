@@ -47,7 +47,7 @@ if (place_meeting(x + xx, y + yy, enemy) and image_speed > 0) {
 			}
 			//	enemy on the ground, player is NOT ChargePunching
 			else if onGround and !other.punchChargePunch {
-				if onGround { onGround = false thrust += Force/2 }
+				//if onGround { onGround = false thrust += Force/2 }
 			}
 			//	enemy in the air and player is not ChargePunching
 			if !onGround and !other.punchChargePunch {
