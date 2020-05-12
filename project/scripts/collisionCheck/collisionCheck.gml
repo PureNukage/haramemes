@@ -31,6 +31,7 @@ if (xx != 0 or yy != 0) {
 			if !place_meeting(x + sign(xx), y, block) x += sign(xx)
 			else {
 				var inst = instance_place(x + sign(xx), y, block)
+				debug_log("Collision with block with a force of "+string(force)+" and a Direction of "+string(Direction))
 				if enemySplatCheck(inst) states = states.splat	
 				//xx = 0
 				XX = floorXX
@@ -42,6 +43,7 @@ if (xx != 0 or yy != 0) {
 			if !place_meeting(x, y + sign(yy), block) y += sign(yy)	
 			else {
 				var inst = instance_place(x , y + sign(yy), block)
+				debug_log("Collision with block with a force of "+string(force)+" and a Direction of "+string(Direction))
 				if enemySplatCheck(inst) states = states.splat	
 				//yy = 0
 				YY = floorYY
@@ -53,6 +55,7 @@ if (xx != 0 or yy != 0) {
 			if !place_meeting(x + sign(xx), groundY, block) x += sign(xx)
 			else {
 				var inst = instance_place(x + sign(xx), groundY, block)
+				debug_log("Collision with block with a force of "+string(force)+" and a Direction of "+string(Direction))
 				if enemySplatCheck(inst) states = states.splat	
 				//xx = 0
 				XX = floorXX
@@ -67,7 +70,8 @@ if (xx != 0 or yy != 0) {
 			}
 			else {
 				var inst = instance_place(x , groundY + sign(yy), block)
-				if enemySplatCheck(inst) if object_index == enemy states = states.splat	
+				debug_log("Collision with block with a force of "+string(force)+" and a Direction of "+string(Direction))
+				if enemySplatCheck(inst) states = states.splat	
 				//yy = 0
 				YY = floorYY
 			}

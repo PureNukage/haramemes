@@ -11,7 +11,7 @@ var Force = argument[1]
 
 	if onGround {
 
-		if Force > 0 Force -= fric * app.gameTime
+		if Force > 0 Force -= fric //* app.gameTime
 		else Force = 0
 	}
 	

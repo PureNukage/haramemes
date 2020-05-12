@@ -27,7 +27,7 @@ if input.punchHold and !input.punch and !punchChargePunch and image_index < 2 {
 		if punchCharge < punchChargeMax {
 			punchCharge++	
 		} else {
-			debug_log("MAXIMUM CHARGED PUNCH!!!!")
+			debug_log("MAXIMUM CHARGED PUNCH!!!!", INFO)
 			punchChargePunch = true
 		}
 		image_index = 1
@@ -48,15 +48,15 @@ else {
 		image_index = 2
 		if punchChargePunch {
 				force += punchCharge-9
-				debug_log("Charge Punch is applying "+string(punchCharge)+" force to the player!")
+				debug_log("Charge Punch is applying "+string(punchCharge-9)+" force to the player!", INFO)
 			}
 			//	Not charge punching
 			else {
 				force += punchCharge-9
-				debug_log("Punch is applying "+string(punchCharge)+" force to the player!")
+				debug_log("Punch is applying "+string(punchCharge-9)+" force to the player!", INFO)
 			}
 		if punchCharge > punchChargeMin and !punchChargePunch {
-			debug_log("Charge Punch at "+string((punchCharge / punchChargeMax)*100)+"% power!")
+			debug_log("Charge Punch at "+string((punchCharge / punchChargeMax)*100)+"% power!", INFO)
 			punchChargePunch = true
 		}
 	} else {
@@ -64,12 +64,12 @@ else {
 		if image_index == 2 {
 			if punchChargePunch {
 				force += punchCharge
-				debug_log("Charge Punch is applying "+string(punchCharge)+" force to the player!")
+				//debug_log("Charge Punch is applying "+string(punchCharge)+" force to the player!")
 			}
 			//	Not charge punching
 			else {
 				force += punchCharge
-				debug_log("Punch is applying "+string(punchCharge)+" force to the player!")
+				//debug_log("Punch is applying "+string(punchCharge)+" force to the player!")
 			}
 		}
 		
@@ -80,8 +80,8 @@ else {
 	}
 				
 	//	Punch again!
-	if (input.punch and !punchChargePunch) and image_index >= 3 {
-		debug_log("[DEBUG] I am quick punching again!")
+	if (input.punch and !punchChargePunch) and image_index >= 2 {
+		debug_log("[DEBUG] I am quick punching again!", INFO)
 		punchQueue = false
 		image_index = 0
 		punchCharge = 9
@@ -100,7 +100,7 @@ else {
 			if states == states.punch1 punch1CD = 15
 			
 			if punchChargeQueue {
-				debug_log("I am queueing my next punch")
+				debug_log("I am queueing my next punch", INFO)
 				states = nextState	
 				image_index = 0
 				punchCharge = 1

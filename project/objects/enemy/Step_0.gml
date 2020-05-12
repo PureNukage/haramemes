@@ -70,6 +70,11 @@ else if damaged {
 	damaged = false
 }
 
+if damagedFlashTimer > 0 damagedFlashTimer--
+else {
+	damageFlash = false	
+}
+
 collisionCheck()
 
 depth = -groundY

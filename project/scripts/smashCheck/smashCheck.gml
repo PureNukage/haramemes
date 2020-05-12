@@ -11,7 +11,7 @@ if ds_list_empty(smashList) {
 		thrust = 8
 	}
 	
-	triggerSlowmo(0.1,120)
+	//triggerSlowmo(0.1,120)
 	
 	ds_list_delete(smashList,0)
 }

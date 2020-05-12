@@ -4,6 +4,10 @@ if !surface_exists(splatterSurface) or !surface_exists(splatterSurfaceFinal) {
 	
 	surface_set_target(splatterSurface)
 	draw_clear_alpha(c_white, 0)
+	
+	gpu_set_blendmode_ext(bm_dest_alpha, bm_zero)
+	with class_unit draw_self()
+	gpu_set_blendmode(bm_normal)
 	surface_reset_target()
 	
 	surface_set_target(splatterSurfaceFinal)
@@ -20,9 +24,10 @@ else {
 
 	gpu_set_blendmode_ext(bm_dest_alpha, bm_zero)
 	draw_surface(splatterSurface, 0, 0)
+	//with class_unit draw_self()
 	gpu_set_blendmode(bm_normal)
 
 	surface_reset_target()
 
-	draw_surface(splatterSurfaceFinal, 0, 0)
+	//draw_surface(splatterSurfaceFinal, 0, 0)
 }

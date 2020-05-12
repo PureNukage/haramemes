@@ -14,6 +14,9 @@ timer = 0
 damaged = false
 damageID = -1
 damagedTimer = -1
+damagedFlashTimer = -1
+damageFlash = false
+
 knockedDown = false
 
 damaged = false

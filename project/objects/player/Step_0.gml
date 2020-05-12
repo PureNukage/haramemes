@@ -70,7 +70,7 @@ switch(states)
 					Decal.timer = 120
 					smash = true
 					var amount = collision_circle_list(x,y,smashRadius,enemy,false,true,smashList,true)
-					debug_log("I smashed "+string(amount)+" enemies!")
+					debug_log("I smashed "+string(amount)+" enemies!", INFO)
 				}
 				goSmash = false
 				grav = 1

@@ -1,10 +1,12 @@
 if !onGround applyThrust()
 
+//force = applyForce(Direction,force)
+
 //	If in the air
 if y < groundY {
 	onGround = false
 	
-	if !wallSplat {
+	if !wallSplat and thrust < 0 {
 		wallSplat = true
 		//	Draw wall splat
 	
@@ -13,7 +15,7 @@ if y < groundY {
 		var XX = lengthdir_x(force,Direction)
 		var YY = lengthdir_y(force,Direction)
 	
-		draw_sprite_ext(s_mist,0,groundX+XX,groundY+YY,1,1,abs(Direction),c_driedBlood,1)
+		draw_sprite_ext(s_mist,0,x+XX,y+YY,1,1,abs(Direction),c_driedBlood,1)
 		
 		surface_reset_target()	
 	}
@@ -36,3 +38,6 @@ else {
 		
 	}
 }
+
+// += xx
+//y += yy

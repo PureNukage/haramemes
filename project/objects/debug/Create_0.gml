@@ -1,1 +1,3 @@
 on = false
+
+logging = INFO

@@ -19,3 +19,6 @@ enum decal_types {
 #macro forceMax 50
 
 #macro c_driedBlood make_color_rgb(180,0,0)
+
+#macro INFO 0
+#macro DEBUG 1

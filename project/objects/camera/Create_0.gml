@@ -19,8 +19,8 @@ if target > -1 {
 	y = target.y
 }
 
-debug_log("window_width: " + string(window_get_width()))
-debug_log("window_height: " + string(window_get_height()))
+debug_log("window_width: " + string(window_get_width()), INFO)
+debug_log("window_height: " + string(window_get_height()), INFO)
 
 #region Enabling Use of Views
 
@@ -32,8 +32,8 @@ debug_log("window_height: " + string(window_get_height()))
 	view_set_wport(0,width)
 	view_set_hport(0,height)
 	
-	debug_log("window_width: " + string(window_get_width()))
-	debug_log("window_height: " + string(window_get_height()))
+	debug_log("window_width: " + string(window_get_width()), INFO)
+	debug_log("window_height: " + string(window_get_height()), INFO)
 
 #endregion
 #region Resize and Center Game Window

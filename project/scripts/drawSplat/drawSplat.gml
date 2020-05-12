@@ -15,6 +15,10 @@ for(var i=0;i<splatStatesCount;i++) {
 		//	Draw splat
 		surface_set_target(app.splatterSurface)
 		
+		//var DDirection = point_direction()
+		
+		debug_log("Drawing splat with a force of "+string(force)+" and a Direction of "+string(Direction))
+		
 		var XX = lengthdir_x(force,Direction)
 		var YY = lengthdir_y(force,Direction)
 		

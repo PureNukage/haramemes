@@ -10,3 +10,6 @@ rotation = irandom_range(0,360)
 wallSplat = false
 Direction = 0
 force = 0
+xx = 0
+yy = 0
+fric = 1
