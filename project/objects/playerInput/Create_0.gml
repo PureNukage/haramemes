@@ -26,6 +26,9 @@ gamepadKey3Press = gamepad_button_check_pressed(0, gp_face2)
 gamepadShoulderRRB = gamepad_button_check_pressed(0, gp_shoulderrb)
 gamepadShoulderRRBPressed = gamepad_button_check_pressed(0, gp_shoulderrb)
 
+gamepadShoulderLLB = gamepad_button_check_pressed(0, gp_shoulderlb)
+gamepadShoulderLLBPressed = gamepad_button_check(0, gp_shoulderlb)
+
 gamepadSelectPress = gamepad_button_check_pressed(0 ,gp_select)
 
 

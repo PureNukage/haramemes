@@ -14,6 +14,13 @@ punchChargeRadius = 16
 punchChargeRadiusMax = 36
 punch1CD = -1
 
+grab = false
+grabRightHand = false
+grabLeftHand = false
+grabRightHandHeld = -1
+grabLeftHandHeld = -1
+grabBothHands = false
+
 goSmash = false
 smash = false
 smashRadius = 128

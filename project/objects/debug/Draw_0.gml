@@ -14,6 +14,8 @@ if on {
 		e[states.smash] = "Smash"
 		e[states.splat] = "Splat"
 		e[states.walk] = "Walk"
+		e[states.holding] = "Holding"
+		e[states.held] = "Held"
 		draw_text(XX,YY,e[states])								YY += 15
 		
 		draw_text(XX,YY,"force: "+string(force))				YY += 15
@@ -27,6 +29,13 @@ if on {
 			draw_text(XX,YY,"punchCharge: "+string(punchCharge))			YY += 15
 			draw_text(XX,YY,"punch1CD: "+string(punch1CD))					YY += 15
 			draw_text(XX,YY,"punchChargeQueue: "+string(punchChargeQueue))  YY += 15
+			
+			draw_text(XX,YY,"grab: "+string(grab))							YY += 15
+			draw_text(XX,YY,"grabRightHand: "+string(grabRightHand))					YY += 15
+			draw_text(XX,YY,"grabLeftHand: "+string(grabLeftHand))			YY += 15
+			draw_text(XX,YY,"grabRightHandHeld: "+string(grabRightHandHeld))				YY += 15
+			draw_text(XX,YY,"grabLeftHandHeld: "+string(grabLeftHandHeld))			YY += 15
+
 			
 		}
 	

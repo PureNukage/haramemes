@@ -3,7 +3,7 @@ switch(states)
 	#region Free
 		case states.free:
 				
-			playerMovement()
+			if !grab playerMovement()
 			
 			if !onGround applyThrust()
 			
@@ -13,6 +13,28 @@ switch(states)
 				thrust = 10
 				states = states.jump
 			}
+			
+			//if input.gamepadShoulderRRB and !grab {
+			//	grab = true
+			//	force += 9
+			//	image_index = 0
+				
+			//}
+			
+			//	I am grabbing!
+			if (input.gamepadShoulderRRB or input.gamepadShoulderLLB) and !grab {
+				grab = true
+				if input.gamepadShoulderRRB grabRightHand = true
+				else grabLeftHand = true
+				
+				//	Sprite check
+				grabSpriteCheck()
+				
+				force += 9
+				image_index = 1
+			}
+			
+			if grab getGrabbed()
 			
 			smash = false
 			
@@ -99,6 +121,18 @@ switch(states)
 			sprite_index = s_gorilla_punch2redo
 			
 			punchLogic(states.punch1, sprite_index)
+			
+		break
+	#endregion
+	#region	Holding
+		case states.holding:
+			
+			if grab {
+				image_index = 1
+				image_speed = 0
+				
+			}		
+			
 			
 		break
 	#endregion

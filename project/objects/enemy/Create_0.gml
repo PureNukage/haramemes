@@ -17,6 +17,8 @@ damagedTimer = -1
 damagedFlashTimer = -1
 damageFlash = false
 
+justThrown = -1
+
 knockedDown = false
 
 damaged = false

@@ -6,9 +6,9 @@ enum states {
 	punch2,
 	smash,
 	splat,
-	hold
+	holding,
+	held,
 }
-
 enum decal_types {
 	erosion,
 	blood

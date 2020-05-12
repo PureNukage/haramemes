@@ -75,6 +75,11 @@ else {
 	damageFlash = false	
 }
 
+if justThrown > 0 justThrown--
+else if justThrown == 0 {
+	justThrown = -1	
+}
+
 collisionCheck()
 
 depth = -groundY

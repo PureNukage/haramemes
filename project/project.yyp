@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "14874210-2de6-430a-87c7-1fdebd66c96f",
+            "Value": {
+                "id": "362443dc-a1a7-42b7-9caf-dea6fa5ce064",
+                "resourcePath": "scripts\\getGrabbed\\getGrabbed.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "19204357-9a8b-41ed-8a7d-a2d0867f257b",
             "Value": {
                 "id": "111776e9-fb14-4d19-9600-6636099eb9a4",
@@ -67,6 +75,14 @@
             "Value": {
                 "id": "0c34eca4-292f-48f2-9e73-19767fa32315",
                 "resourcePath": "scripts\\applyThrust\\applyThrust.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "1df946ad-f430-4ec4-9a88-fe5bc9172f85",
+            "Value": {
+                "id": "651d8d52-8b0e-4c3b-bfb3-907806fe5eda",
+                "resourcePath": "scripts\\grabSpriteCheck\\grabSpriteCheck.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -116,6 +132,14 @@
                 "id": "d9de6a92-41d2-48ec-949b-2cfd80bb03ca",
                 "resourcePath": "objects\\class_unit\\class_unit.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3f91bb85-a1e2-41de-9f13-842d2ce1c86c",
+            "Value": {
+                "id": "87e1063c-1fd5-49c3-90ea-848f94328f40",
+                "resourcePath": "scripts\\grabThrow\\grabThrow.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -583,6 +607,9 @@
         "77fc946a-6e30-4a1c-8f82-b52fc763074a",
         "93e872a1-b621-4efa-a124-84b85b743296",
         "92f965e0-2df7-4b72-901e-feb539ecfed0",
+        "14874210-2de6-430a-87c7-1fdebd66c96f",
+        "1df946ad-f430-4ec4-9a88-fe5bc9172f85",
+        "3f91bb85-a1e2-41de-9f13-842d2ce1c86c",
         "19ad9e40-fa41-45ab-85f0-b6f2959e0ff0",
         "ee03dda5-62dc-492d-8e6f-caeb28d37899",
         "90867eef-4568-4719-8a57-9b74ecea5fcf",
