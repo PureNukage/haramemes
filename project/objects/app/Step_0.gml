@@ -1,5 +1,5 @@
 //	Move slowmo up or down with Right Analog stick
-if input.gamepadAxisRH != 0 {
+if input.gamepadAxisRH != 0 and debug.on {
 	gameTime += input.gamepadAxisRH/10
 	gameTime = clamp(gameTime, 0 , 2)
 }
